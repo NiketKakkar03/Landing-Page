@@ -20,8 +20,8 @@
             <h1 id="logo"><a href="index.html">HomePage</a></h1>
             <nav id="nav">
                     <ul>
-                        <li><a href="#one">About me</a></li>
-                        <li><a href="#two">Education</a></li>
+                        <li><a href="#one" class="smooth-scroll">About me</a></li>
+                        <li><a href="#two" class="smooth-scroll">Education</a></li>
                     <li>
                         <a href="#">Experience</a>
                         <ul>
@@ -173,6 +173,18 @@
     <script src="assets/js/breakpoints.min.js"></script>
     <script src="assets/js/util.js"></script>
     <script src="assets/js/main.js"></script>
+
+    <script>
+        document.querySelectorAll('.smooth-scroll').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
 
 </body>
 </html>
